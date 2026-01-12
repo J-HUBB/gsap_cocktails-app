@@ -1,6 +1,6 @@
-import { navLinks } from '../../constants/index.js';
+import {navLinks} from '../../constants/index.js';
 import {useGSAP} from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+import {ScrollTrigger} from "gsap/all";
 import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,9 +14,9 @@ const Navbar = () => {
             }
         });
 
-        navTween.to('nav', {
+        navTween.fromTo('nav', { backgroundColor: 'transparent' }, {
             backgroundColor: '#00000050',
-            backdropFilter: 'blur(10px)',
+            backgroundFilter: 'blur(10px)',
             duration: 1,
             ease: 'power1.inOut'
         });
@@ -26,14 +26,14 @@ const Navbar = () => {
         <nav>
             <div>
                 <a href="#home" className="flex items-center gap-2">
-                    <img src="/images/logo.png" alt="Logo" />
-                  <p>Silky Sipps</p>
+                    <img src="/images/logo.png" alt="Logo"/>
+                    <p>Silky Sipps</p>
                 </a>
 
                 <ul>
                     {navLinks.map((link) => (
                         <li key={link.id}>
-                         <a href={`#${link.id}`}>{link.title}</a>
+                            <a href={`#${link.id}`}>{link.title}</a>
                         </li>
                     ))}
                 </ul>
